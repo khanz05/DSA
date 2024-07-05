@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Web;
 using Graphs.TrieDS;
 using Graphs.BinaryTreeTopic;
+using Graphs.Sorting_Searching;
+using System.Net.Http.Headers;
 
 namespace Graphs
 {
@@ -208,15 +210,37 @@ namespace Graphs
 
             #region Heapify & Heap Sort
 
-            //Heap h = new Heap();
+            Heap h = new Heap();
+
+            #region Insert/ Delete/ Heapify/ heap Sort
 
             //int[] arr = new int[] { -1, 54, 53, 55, 52, 50 };
             //int n = 5;
 
-            //Console.WriteLine("Before Heapify");
-            //h.PrintHeapify(ref arr, n);
+            //int[] arr = new int[] { 7, 10, 4, 3, 20, 15 };
+            //int n = 6;
+            //int l = 0;
+            //int r = 5;
 
-            //for (int i = n/2; i > 0; i--)
+
+            //Console.WriteLine("Before Heapify");
+            //h.PrintHeapifyZero(ref arr);
+
+            //Console.WriteLine("After Heapify");
+            //int ans = h.kthSmallestheap(ref arr, l, r, k);
+            //Console.WriteLine(ans);
+            //h.PrintHeapifyZero(ref arr);
+
+            //for (int i = r / 2; i >= 0; i--)
+            //{
+            //    h.HeapifyMaxHeapZero(ref arr, k+1, i);
+            //}
+
+            //h.PrintHeapifyZero(ref arr);
+
+
+
+            //for (int i = n / 2; i > 0; i--)
             //{
             //    h.HeapifyMaxHeap(ref arr, n, i);
             //}
@@ -228,7 +252,91 @@ namespace Graphs
             //h.HeapSort(ref arr, n);
 
             //Console.WriteLine("After Heap Sort");
-            //h.PrintHeapify(ref arr, n);
+            //h.PrintHeapify(ref arr, n); 
+
+            #endregion
+
+            #region Kth Smallest
+
+            //int[] arr = new int[] { 7, 10, 4, 3, 20, 15 };
+            //int k = 4;
+            //int l = 0, r = 5;
+            //int ans = h.kthSmallestheap(ref arr, l, r, k);
+
+            //Console.WriteLine($"Kth Smallest Element-> {ans}");
+
+
+            #endregion
+
+            #region Kth Largest
+
+            //TC-1
+            //int[] arr = { 3,2,1,5,6,4 };
+            //int k= 2;
+
+            //TC-1
+            //int[] arr = { 3, 2, 3, 1, 2, 4, 5, 5, 6 };
+            //int k = 2;
+            //int ans = h.FindKthLargestheap(arr, k);
+
+            //Console.WriteLine($"Kth Largest Element-> {ans}");
+
+
+            #endregion
+
+            #region Merge Two Binary Max Heaps
+
+            //int n = 4, m = 3;
+            //int[] a = { 10, 5, 6, 2 };
+            //int[] b = { 12, 7, 9 };
+            //int []ans = h.mergeHeaps(a, b, n, m);
+
+            //Console.Write("MergedHeap: -> ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Minimum Cost of Ropes
+
+            //int[] arr = { 4, 3, 2, 6 };
+            //int n = arr.Length;
+            //int ans = h.MinCostOfRopes(arr, n);
+
+            //Console.Write($"Min Cost Of Ropes: -> {ans}");
+
+            #endregion
+
+            #region Get Kth Largest Sum SubArray
+
+            //int[] arr = new int[] { 2, 6, 4, 1 };
+            //int k = 3; 
+            //int ans = h.getKthLargestSumSubArray(arr, k);
+
+            //Console.WriteLine($"Kth Smallest Element-> {ans}");
+
+            #endregion
+
+            #region Merge k Sorted Arrays
+            //int k = 3;
+            //int[,] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+            //4
+            //1 2 3 4 0 5 10 15 2 4 8 10 3 9 27 81
+            //int k = 4;
+            //int[,] arr = { { 1, 2, 3, 4 }, { 0, 5, 10, 15 }, { 2, 4, 8, 10 }, { 3, 9, 27, 81 } };
+            //var ans = h.MergeKSortedArrays(arr, k);
+
+            //Console.WriteLine($"MergeKSortedArrays->");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+
+            #endregion
 
             #endregion
 
@@ -313,9 +421,9 @@ namespace Graphs
 
             #region Build Tree using Level Order
 
-            Node root = null;
-            BinaryTreeCreationTopic bt = new BinaryTreeCreationTopic();
-            root = bt.BuildTreeUsingLevelOrder(root);
+            //Node root = null;
+            //BinaryTreeCreationTopic bt = new BinaryTreeCreationTopic();
+            //root = bt.BuildTreeUsingLevelOrder(root);
 
             #endregion
 
@@ -482,10 +590,216 @@ namespace Graphs
 
             #region Is Balance Tree
 
-            Console.WriteLine("\n");
-            bool ans = bt.isBalancedTree(root);
+            //Console.WriteLine("\n");
+            //bool ans = bt.isBalancedTree(root);
 
-            Console.Write($"Is Balanced Tree {ans}");
+            //Console.Write($"Is Balanced Tree {ans}");
+
+            #endregion
+
+            #region Heap using Tree
+
+            #region Is Binary Tree Heap
+
+            //Console.WriteLine("\n");
+            //bool ans = h.isBinaryTreeHeap(root);
+
+            //Console.Write($"Is Binary Tree heap-> {ans}");
+
+
+            #endregion
+
+            #region Convert BST to MinHeap
+
+            //Console.WriteLine("\n");
+            //Node ans = h.ConvertBSTtoMinHeap(root);
+
+            //Console.WriteLine("Converted BST to Min Heap");
+            //bt.LevelOrderTraversal(ans);
+
+            #endregion
+
+            #region Convert BST to MaxHeap
+
+            //Console.WriteLine("\n");
+            //Node ans = h.ConvertBSTtoMaxHeap(root);
+
+            //Console.WriteLine("Converted BST to Max Heap");
+            //bt.LevelOrderTraversal(ans);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region Searching and Sorting
+
+            BinarySearchAlgorithm bs = new BinarySearchAlgorithm();
+
+            #region Binary Search
+
+            //int[] even = { 2, 4, 6, 8, 12, 18 };
+            //int[] even = { 5, 7, 7, 8, 8, 10 };
+            //int low = 0;
+            //int high = even.Length - 1;
+            //int key = 10;
+
+            //int ans = bs.BinarySearch(even, low, high, key);
+            //Console.Write($"Binary Search for even array {key} -> {ans}");
+            //Console.WriteLine("\n");
+
+            //int[] odd = { 3, 8, 11, 14, 16 };
+            //int low = 0;
+            //int high = odd.Length - 1;
+            //int key = 11;
+
+            //int ans = bs.BinarySearch(odd, low, high, key);
+            //Console.Write($"Binary Search for odd array {key} -> {ans}");
+            //Console.WriteLine("\n"); 
+            #endregion
+
+            #region Binary Sort Problem
+
+            #region First and Last Element
+
+            //int[] arr = { 5, 7, 7, 8, 8, 10 };
+            //int target = 8;
+
+            //int[] ans = bs.SearchRange(arr, target);
+            //Console.Write($"First and Last Element {ans[0]} and {ans[1]}");
+            //Console.WriteLine("\n");
+
+
+            #endregion
+
+            #region Pivot Element of Index
+
+            //int ans = bs.getPivotElement(arr);
+            //Console.Write($"Pivot Element -> {ans}");
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #region Decimal Places Square Root
+
+            //double ans = bs.MorePrecisionSquareRoot(6, 3);
+            //Console.Write($"Decimal Precision SquareRoot -> {ans}");
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #region Decimal Places Square Root
+
+            //int[] arr = { 12, 34, 67, 90 };
+            //int n = 4;
+            //int m = 5;
+            //int ans = bs.BookAllocation(arr, n, m);
+            //Console.Write($"Book Allocation -> {ans}");
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #endregion
+
+            #region Selection Sort
+
+            SelectionSortAlgorithm ss = new SelectionSortAlgorithm();
+
+            #region Using Swapping
+
+            //int[] arr = { 4, 1, 3, 9, 7 };
+            //int n = arr.Length;
+            //ss.SelectionSort(ref arr, n);
+
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            //Console.WriteLine("\n"); 
+
+            #endregion
+
+            #region Using Shifting
+
+            //int[] arr = { 4, 1, 3, 9, 7 };
+            //int n = arr.Length;
+            //ss.SelectionSortByShift(ref arr, n);
+
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #endregion
+
+            #region Bubble Sort
+
+            BubbleSortAlgorithm bsa = new BubbleSortAlgorithm();
+
+            //int N = 5;
+            ////int[] arr = { 4, 1, 3, 9, 7 };
+            //int[] arr = { 1, 3, 4, 7, 9 };
+            //bsa.BubbleSort(ref arr, N);
+
+            //Console.WriteLine("Bubble Sort: ");
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #region Insertion Sort
+
+            InsertionSortAlgorithm ins = new InsertionSortAlgorithm();
+
+            //int N = 5;
+            //int[] arr = { 10, 1, 7, 4, 8, 2, 11 };
+            //ins.InsertionSort(ref arr);
+
+            //Console.WriteLine("Insertion Sort: ");
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #region Merge Sort
+
+            MergeSortAlgorithm msa = new MergeSortAlgorithm();
+
+            //int[] arr = { 10, 1, 7, 4, 8, 2, 11 };
+            //msa.MergeSort(ref arr);
+
+            //Console.WriteLine("Merge Sort: ");
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #region Quick Sort
+
+            QuickSortAlgorithm qsa = new QuickSortAlgorithm();
+
+            int[] arr = { 10, 1, 7, 4, 8, 2, 11 };
+            qsa.QuickSortAlgo(ref arr);
+
+            Console.WriteLine("Quick Sort: ");
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("\n");
 
             #endregion
 
