@@ -10,6 +10,7 @@ using Graphs.TrieDS;
 using Graphs.BinaryTreeTopic;
 using Graphs.Sorting_Searching;
 using System.Net.Http.Headers;
+using Graphs.BitwiseOperation;
 
 namespace Graphs
 {
@@ -789,17 +790,55 @@ namespace Graphs
 
             #region Quick Sort
 
-            QuickSortAlgorithm qsa = new QuickSortAlgorithm();
+            //QuickSortAlgorithm qsa = new QuickSortAlgorithm();
 
-            int[] arr = { 10, 1, 7, 4, 8, 2, 11 };
-            qsa.QuickSortAlgo(ref arr);
+            //int[] arr = { 10, 1, 7, 4, 8, 2, 11 };
+            //qsa.QuickSortAlgo(ref arr);
 
-            Console.WriteLine("Quick Sort: ");
-            foreach (var item in arr)
-            {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine("\n");
+            //Console.WriteLine("Quick Sort: ");
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #endregion
+
+            #region Bitwise Operation
+
+            BitwiseOperationAlgorithm bos = new BitwiseOperationAlgorithm();
+
+            #region Decimal to Binary
+
+            //bos.DecimalToBinary();
+
+            #endregion
+
+            #region Binary To Decimal
+
+            //bos.BinaryToDecimal();
+
+            #endregion
+
+            #region Prime Number using Sieve
+
+            //int n = 40;
+            //int ans = bos.IsPrime(n);
+
+            //Console.WriteLine($"No. of Prime numbers between 1 - {n} -> {ans}");
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #region Segmented Sieve
+
+            int n = 10;
+            bos.SegmentedSieve(n);
+
+            //Console.WriteLine($"No. of Prime numbers between 1 - {n} -> {ans}");
+            //Console.WriteLine("\n");
 
             #endregion
 
@@ -807,5 +846,7 @@ namespace Graphs
 
             Console.ReadLine();
         }
+
+
     }
 }
