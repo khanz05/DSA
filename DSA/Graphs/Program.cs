@@ -11,6 +11,9 @@ using Graphs.BinaryTreeTopic;
 using Graphs.Sorting_Searching;
 using System.Net.Http.Headers;
 using Graphs.BitwiseOperation;
+using Graphs.LinkedListOperations;
+using Graphs.LinkedList;
+
 
 namespace Graphs
 {
@@ -834,13 +837,386 @@ namespace Graphs
 
             #region Segmented Sieve
 
-            int n = 10;
-            bos.SegmentedSieve(n);
+            //int n = 10;
+            //bos.SegmentedSieve(n);
 
             //Console.WriteLine($"No. of Prime numbers between 1 - {n} -> {ans}");
             //Console.WriteLine("\n");
 
             #endregion
+
+            #endregion
+
+            #region Linked List
+
+            #region Singly Linked List
+
+            SinglyLinkedList ll = new SinglyLinkedList();
+
+            #region Insertion/Deletion
+
+            //int[] arr = { 10, 20, 30, 40 };
+            //SingleNode head = new SingleNode(arr[0]);
+            //SingleNode tail = head;
+
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    ll.InsertAtHead(ref head, arr[i]);
+            //}
+
+            //ll.PrintHead(ref head);
+
+            //if (ll.IsCircular(head))
+            //{
+            //    Console.WriteLine("Is Circular");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Circular");
+            //}
+
+            //ll.PrintHead(ref head);
+
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail, arr[i]);
+            //}
+
+            //ll.PrintHead(ref head);
+
+            //ll.InsertAtPosition(ref head, ref tail, 25, 3);
+            //ll.PrintHead(ref head);
+
+            //ll.InsertAtPosition(ref head, ref tail, 5, 1);
+            //ll.PrintHead(ref head);
+
+            //ll.DeleteAtPosition(ref head, 3);
+            //ll.PrintHead(ref head);
+
+            //Console.WriteLine($"Head {head.data}");
+            //Console.WriteLine($"Tail {tail.data}");  
+
+            #endregion
+
+            #region Remove Duplicate in Unsorted List
+
+            //int[] arr = { 20, 10, 20, 30, 10, 30, 30 };
+            //SingleNode head = new SingleNode(arr[0]);
+            //SingleNode tail = head;
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail, arr[i]);
+            //}
+
+            //ll.PrintHead(ref head);
+
+            //ll.RemoveDuplicateMap(ref head);
+            //Console.WriteLine("After removing unsorted duplicate");
+            //ll.PrintHead(ref head);
+
+
+            #endregion
+
+            #region Sort a Linked List
+
+            //int[] arr = { 40, 30, 10, 20 };
+            //int[] arr = { 40, 25, 30, 10, 20 };
+            //SingleNode head = new SingleNode(arr[0]);
+            //SingleNode tail = head;
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail, arr[i]);
+            //}
+
+            //ll.PrintHead(ref head);
+
+            //ll.SortUsingMerge(ref head);
+            //Console.WriteLine("Sort list using Merge Sort");
+            //ll.PrintHead(ref head);
+
+            #endregion
+
+            #region Sort 0's, 1's, 2's 
+
+            #region Using Approach-1
+
+            //int[] arr = { 1, 0, 1, 2, 1, 2, 0 };
+            //SingleNode head = new SingleNode(arr[0]);
+            //SingleNode tail = head;
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail, arr[i]);
+            //}
+
+            //ll.PrintHead(ref head);
+
+            //ll.SortUsingCountApproachOne(ref head);
+            //Console.WriteLine("Sort  0's, 1's, 2's");
+            //ll.PrintHead(ref head);
+
+            #endregion
+
+            #region Using Approach-2
+
+            //int[] arr = { 1, 0, 1, 2, 1, 2, 0 };
+            ////int[] arr = { 0, 2, 2, 0 };
+            //SingleNode head = new SingleNode(arr[0]);
+            //SingleNode tail = head;
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail, arr[i]);
+            //}
+
+            //ll.PrintHead(ref head);
+
+            //ll.SortUsingApproachTwo(ref head);
+            //Console.WriteLine("Sort  0's, 1's, 2's");
+            //ll.PrintHead(ref head);
+
+            #endregion
+
+            #endregion
+
+            #region Merge Two Sorted LL
+
+            #region Using Recursion
+
+            //int[] arr1 = { 1, 4, 5 };
+            //SingleNode head1 = new SingleNode(arr1[0]);
+            //SingleNode tail1 = head1;
+            //for (int i = 1; i < arr1.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail1, arr1[i]);
+            //}
+            //Console.WriteLine("Linked List-1");
+            //ll.PrintHead(ref head1);
+
+            //int[] arr2 = { 2, 3, 5 };
+            //SingleNode head2 = new SingleNode(arr2[0]);
+            //SingleNode tail2 = head2;
+            //for (int i = 1; i < arr2.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail2, arr2[i]);
+            //}
+
+            //Console.WriteLine("Linked List-2");
+            //ll.PrintHead(ref head2);
+
+            //SingleNode headRef = ll.MergeTwoSortedLinkedListUsingRecursion(head1, head2);
+
+            //Console.WriteLine("Merge Two Sorted List using Recursion");
+            //ll.PrintHead(ref headRef);
+
+            #endregion
+
+            #region Using Iteration
+
+            //int[] arr1 = { 1, 4, 5 };
+            //SingleNode head1 = new SingleNode(arr1[0]);
+            //SingleNode tail1 = head1;
+            //for (int i = 1; i < arr1.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail1, arr1[i]);
+            //}
+            //Console.WriteLine("Linked List-1");
+            //ll.PrintHead(ref head1);
+
+            //int[] arr2 = { 2, 3, 5 };
+            //SingleNode head2 = new SingleNode(arr2[0]);
+            //SingleNode tail2 = head2;
+            //for (int i = 1; i < arr2.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail2, arr2[i]);
+            //}
+
+            //Console.WriteLine("Linked List-2");
+            //ll.PrintHead(ref head2);
+
+            //SingleNode headRef = ll.MergeTwoSortedLinkedListUsingIteration(head1, head2);
+
+            //Console.WriteLine("Merge Two Sorted List using Recursion");
+            //ll.PrintHead(ref headRef);
+
+
+
+            #endregion
+
+            #endregion
+
+            #region Palindrome
+
+            //int[] arr = { 1, 2, 2, 1 };
+            //SingleNode head = new SingleNode(arr[0]);
+            //SingleNode tail = head;
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail, arr[i]);
+            //}
+
+            //Console.WriteLine("Linked List");
+            //ll.PrintHead(ref head);
+
+            //bool ans = ll.IsPalindrome(ref head);
+
+            //Console.WriteLine($"Is Palindrome {ans}");
+
+            #endregion
+
+            #region Add Two Linked List
+
+            //int[] arr1 = { 2, 4, 9 };
+            ////int[] arr1 = { 2, 4, 3 };
+            //SingleNode head1 = new SingleNode(arr1[0]);
+            //SingleNode tail1 = head1;
+            //for (int i = 1; i < arr1.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail1, arr1[i]);
+            //}
+            //Console.WriteLine("Linked List-1");
+            //ll.PrintHead(ref head1);
+
+            //int[] arr2 = { 5, 6, 4, 9 };
+            ////int[] arr2 = { 5,6,4};
+            //SingleNode head2 = new SingleNode(arr2[0]);
+            //SingleNode tail2 = head2;
+            //for (int i = 1; i < arr2.Length; i++)
+            //{
+            //    ll.InsertAtTail(ref tail2, arr2[i]);
+            //}
+
+            //Console.WriteLine("Linked List-2");
+            //ll.PrintHead(ref head2);
+
+            //SingleNode headRef = ll.AddTwoNumbersOther(head1, head2);
+
+            //Console.WriteLine("Add two Linked List");
+            //ll.PrintHead(ref headRef);
+
+            #endregion
+
+            #region Multilevel
+
+            MultiLevelLinkedList L = new MultiLevelLinkedList();
+
+            /*
+             * Let us create the following linked list 5 -> 10
+             * -> 19 -> 28 | | | | V V V V 7 20 22 35 | | | V V
+             * V 8 50 40 | | V V 30 45
+             */
+
+            ////Test Case-1
+            //L.head = L.Push(L.head, 30);
+            //L.head = L.Push(L.head, 8);
+            //L.head = L.Push(L.head, 7);
+            //L.head = L.Push(L.head, 5);
+
+            //L.head.next = L.Push(L.head.next, 20);
+            //L.head.next = L.Push(L.head.next, 10);
+
+            //L.head.next.next = L.Push(L.head.next.next, 50);
+            //L.head.next.next = L.Push(L.head.next.next, 22);
+            //L.head.next.next = L.Push(L.head.next.next, 19);
+
+            //L.head.next.next.next
+            //    = L.Push(L.head.next.next.next, 45);
+            //L.head.next.next.next
+            //    = L.Push(L.head.next.next.next, 40);
+            //L.head.next.next.next
+            //    = L.Push(L.head.next.next.next, 35);
+            //L.head.next.next.next
+            //    = L.Push(L.head.next.next.next, 28);
+
+            //Test Case-2
+            L.head = L.Push(L.head, 17);
+            L.head = L.Push(L.head, 9);
+            L.head = L.Push(L.head, 3);
+
+            L.head.next = L.Push(L.head.next, 47);
+            L.head.next = L.Push(L.head.next, 10);
+
+            L.head.next.next = L.Push(L.head.next.next, 30);
+            L.head.next.next = L.Push(L.head.next.next, 15);
+            L.head.next.next = L.Push(L.head.next.next, 7);
+
+            L.head.next.next.next
+                = L.Push(L.head.next.next.next, 22);
+            L.head.next.next.next
+                = L.Push(L.head.next.next.next, 14);
+           
+            // Function call
+            L.head = L.FlattenNode(L.head);
+
+            L.printList();
+
+            #endregion
+
+            #endregion
+
+            #region Doubly Linked List
+
+            DoublyLinkedList dl = new DoublyLinkedList();
+
+            //int[] arr = { 10, 20, 30, 40 };
+            //DoubleNode head = new DoubleNode(arr[0]);
+            //DoubleNode tail = head;
+
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    dl.InsertAtHeadDoubly(ref head, arr[i]);
+            //}
+
+            //dl.PrintHeadDouble(ref head);
+
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    dl.InsertAtTailDoubly(ref tail, arr[i]);
+            //}
+
+            //dl.PrintHeadDouble(ref head);
+
+            //dl.InsertAtPositionDoubly(ref head, ref tail, 25, 3);
+            //dl.PrintHeadDouble(ref head);
+
+            //dl.InsertAtPositionDoubly(ref head, ref tail, 5, 1);
+            //dl.PrintHeadDouble(ref head);
+
+            //dl.InsertAtPositionDoubly(ref head, ref tail, 45, 7);
+            //dl.PrintHeadDouble(ref head);
+
+            //dl.DeleteDoublyAtPosition(ref head, 3);
+            //dl.PrintHeadDouble(ref head);
+
+            //Console.WriteLine($"Head {head.data}");
+            //Console.WriteLine($"Tail {tail.data}");
+
+            #endregion
+
+            #region Circular Linked List
+
+            CircularSinglyLinkedList cll = new CircularSinglyLinkedList();
+
+            //CircularSingleNode tail = null;
+
+            //cll.InsertNode(ref tail, 5, 3);
+
+            //cll.InsertNode(ref tail, 3, 5);
+
+            //cll.InsertNode(ref tail, 5, 7);
+
+            //cll.InsertNode(ref tail, 7, 9);
+            //cll.PrintCircluarSingle(ref tail);
+
+            //if (cll.IsCircular(tail))
+            //{
+            //    Console.WriteLine("Is Circular");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Circular");
+            //}
+
+            #endregion
+
 
             #endregion
 
