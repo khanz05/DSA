@@ -13,7 +13,9 @@ using System.Net.Http.Headers;
 using Graphs.BitwiseOperation;
 using Graphs.LinkedListOperations;
 using Graphs.LinkedList;
-
+using Graphs.RevisionProblems;
+using System.Data;
+using NetTopologySuite.Noding;
 
 namespace Graphs
 {
@@ -386,11 +388,12 @@ namespace Graphs
             #endregion
 
             #region Tree
+            BinaryTreeCreationTopic bt = new BinaryTreeCreationTopic();
 
             #region Build Tree Using Recursion and Traversal
 
             //Node root = null;
-            //BinaryTreeCreationTopic bt = new BinaryTreeCreationTopic();
+
             //root = bt.BuildTree(root);
 
             //Console.WriteLine("\n");
@@ -425,9 +428,15 @@ namespace Graphs
 
             #region Build Tree using Level Order
 
-            //Node root = null;
-            //BinaryTreeCreationTopic bt = new BinaryTreeCreationTopic();
-            //root = bt.BuildTreeUsingLevelOrder(root);
+            Node root = null;
+            root = bt.BuildTreeUsingLevelOrder(root);
+
+            #endregion
+
+            #region Reverse Level Order
+
+            //Console.WriteLine("Reverse Level Order Traversal");
+            //bt.ReverseLevelOrderTraversal(root);
 
             #endregion
 
@@ -451,9 +460,11 @@ namespace Graphs
             #endregion
 
             #region PostOrder Traversal WithOut Recursion
+
             //Console.WriteLine("\n");
             //Console.WriteLine("Post-Order Traversal W/O Recurrsion");
-            //bt.PostOrderTraversalWithOutRecursion(root); 
+            //bt.PostOrderTraversalWithOutRecursion(root);
+
             #endregion
 
             #region Height Of Tree
@@ -563,7 +574,7 @@ namespace Graphs
             #region Delete Node from BST
 
             //Console.WriteLine("\n");
-            //int node = 70;
+            //int node = 50;
             //Node ans = bt.deleteNode(root, node);
 
             //bt.LevelOrderTraversal(ans);
@@ -1127,26 +1138,26 @@ namespace Graphs
             //    = L.Push(L.head.next.next.next, 28);
 
             //Test Case-2
-            L.head = L.Push(L.head, 17);
-            L.head = L.Push(L.head, 9);
-            L.head = L.Push(L.head, 3);
+            //L.head = L.Push(L.head, 17);
+            //L.head = L.Push(L.head, 9);
+            //L.head = L.Push(L.head, 3);
 
-            L.head.next = L.Push(L.head.next, 47);
-            L.head.next = L.Push(L.head.next, 10);
+            //L.head.next = L.Push(L.head.next, 47);
+            //L.head.next = L.Push(L.head.next, 10);
 
-            L.head.next.next = L.Push(L.head.next.next, 30);
-            L.head.next.next = L.Push(L.head.next.next, 15);
-            L.head.next.next = L.Push(L.head.next.next, 7);
+            //L.head.next.next = L.Push(L.head.next.next, 30);
+            //L.head.next.next = L.Push(L.head.next.next, 15);
+            //L.head.next.next = L.Push(L.head.next.next, 7);
 
-            L.head.next.next.next
-                = L.Push(L.head.next.next.next, 22);
-            L.head.next.next.next
-                = L.Push(L.head.next.next.next, 14);
-           
-            // Function call
-            L.head = L.FlattenNode(L.head);
+            //L.head.next.next.next
+            //    = L.Push(L.head.next.next.next, 22);
+            //L.head.next.next.next
+            //    = L.Push(L.head.next.next.next, 14);
 
-            L.printList();
+            //// Function call
+            //L.head = L.FlattenNode(L.head);
+
+            //L.printList();
 
             #endregion
 
@@ -1217,6 +1228,223 @@ namespace Graphs
 
             #endregion
 
+
+            #endregion
+
+            #region Revision
+
+            Revision rr = new Revision();
+
+            #region is Sum Tree
+
+            //bool ans = rr.isSumTree(root);
+            //Console.WriteLine($"Is Sum Tree: {ans}");
+
+            #endregion
+
+            #region Zig Zag Traversal
+
+            //List<int>ans = rr.ZigZagTraversal(root);
+            ////Console.WriteLine($"Is Sum Tree: {ans}");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Boundary Traversal
+
+            //Console.WriteLine("\n");
+            //List<int> ans = rr.boundary(root);
+            //Console.Write($"Boundary Traversal-> ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Vertical order Traversal
+
+            //Console.WriteLine("\n");
+            //IList<IList<int>> ans = rr.VerticalTraversal(root);
+            //Console.Write($"Boundary Traversal-> ");
+            //foreach (var item in ans)
+            //{
+            //    for (int i = 0; i < item.Count(); i++)
+            //    {
+            //        Console.Write(item[i] + " ");
+            //    }
+            //}
+
+            #endregion
+
+            #region Top View
+
+            //Console.WriteLine("\n");
+            //List<int> ans = rr.topView(root);
+            //Console.Write($"Top View-> ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Bottom View
+
+            //Console.WriteLine("\n");
+            //List<int> ans = rr.bottomView(root);
+            //Console.Write($"Bottom View-> ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Left View
+
+            //Console.WriteLine("\n");
+            ////List<int> ans = rr.LeftView(root);
+            //List<int> ans = rr.LeftViewRecursion(root);
+            //Console.Write($"Left View-> ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Diagonal Traversal
+
+            //Console.WriteLine("\n");
+            //List<int> ans = rr.diagonal(root);
+            //Console.Write($"Diagonal Traversal-> ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Longest Path and Sum of BT
+
+            //Console.WriteLine("\n");
+            //int sumMax = 0;
+            //IList<IList<int>> ans = rr.sumOfLongRootToLeafPath(root, ref sumMax);
+            //Console.WriteLine($"Longest Path Sum: {sumMax}");
+            //Console.Write($"Longest Path-> ");
+            //foreach (var item in ans)
+            //{
+            //    for (int i = 0; i < item.Count(); i++)
+            //    {
+            //        Console.Write(item[i] + " ");
+            //    }
+            //}
+
+            #endregion
+
+            #region Kth-Ancestor of Node
+
+            //Console.WriteLine("\n");
+            //int node = 4;
+            //int k = 2;
+            //int ans = rr.kthAncestor(root, k, node);
+            //Console.Write($"K-th Ancestor of Node {node}-> {ans}");
+
+            #endregion
+
+            #region Maximum Sum of Non-Adjacent Nodes
+
+            //Console.WriteLine("\n");
+            //int ans = rr.getMaxSum(root);
+            //Console.Write($"Maximum Sum of Non-Adjacent Nodes-> {ans}");
+
+            #endregion
+
+            #region Construct tree using Inorder and PreOrder
+
+            //Test Case-1
+            //int[] inorder = { 3, 1, 4, 0, 5, 2 };
+            //int[] preorder = { 0, 1, 3, 4, 2, 5 };
+
+            //Test Case-2
+            //int[] inorder = { 1, 6, 8, 7 };
+            //int[] preorder = { 1, 6, 7, 8 };
+
+            //Test Case-3
+            //int[] inorder = { 9, 3, 15, 20, 7 };
+            //int[] preorder = { 3, 9, 20, 15, 7 };
+
+            //Node tree = rr.BuildTreeUsingInorderPreorder(preorder, inorder);
+            //Console.Write($"Tree using Inorder and Preorder:-> ");
+            //bt.LevelOrderTraversal(tree);
+
+            #endregion
+
+            #region Construct tree using Inorder and Post-Order
+
+            //Test Case-1
+            //int[] inorder = { 3, 1, 4, 0, 5, 2 };
+            //int[] postorder = { 0, 1, 3, 4, 2, 5 };
+
+            //Test Case-2
+            //int[] inorder = { 1, 6, 8, 7 };
+            //int[] postorder = { 1, 6, 7, 8 };
+
+            //Test Case-3
+            //int[] inorder = { 9, 3, 15, 20, 7 };
+            //int[] postorder = { 9, 15, 7, 20, 3 };
+
+            //Node tree = rr.BuildTreeUsingInorderPostOrder(postorder, inorder);
+            //Console.Write($"Tree using Inorder and Postorder:-> ");
+            //bt.LevelOrderTraversal(tree);
+
+            #endregion
+
+            #region Morris Traversal/Flatten Tree into LL
+
+            //rr.Flatten(root);
+
+            #endregion
+
+            #region Find Pred/Succ in BST
+
+            //int key = 5;
+            //rr.findPreSuc(root, key);
+
+            #endregion
+
+            #region Flatten BST to Sorted List
+
+            //Console.WriteLine("\n");
+
+            //Node ans = rr.flattenBST(root);
+            //Console.WriteLine("Flatten BST into LL");
+            //bt.LevelOrderTraversal(ans);
+
+            #endregion
+
+            #region Balance a BST
+
+            //Console.WriteLine("\n");
+
+            //Node ans = rr.BalanceBST(root);
+            //Console.WriteLine("Balance a BST");
+            //bt.LevelOrderTraversal(ans);
+
+            #endregion
+
+            #region Largest BST
+
+            Console.WriteLine("\n");
+
+            int ans = rr.largestBst(root);
+            Console.WriteLine($"Largest BST is of size {ans}");
+
+            #endregion
 
             #endregion
 
