@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DSA.Heaps;
+using NetTopologySuite.Geometries;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Permissions;
@@ -277,5 +279,64 @@ namespace Graphs.Sorting_Searching
         }
 
         #endregion
+
+        #region Lower Bound && Upper Bound
+
+        public int LowerBound(int[] arr, int tar)
+        {
+            int N = arr.Length - 1;
+            int s = 0;
+            int e = N;
+            int mid;
+            while (s < e)
+            {
+                mid = s + (e - s) / 2;
+                if (tar <= arr[mid])
+                {
+                    e = mid;
+                }
+                else
+                {
+                    s = mid + 1;
+                }
+            }
+
+            if (s < N && arr[s] < tar)
+            {
+                s++;
+            }
+
+            return s;
+        }
+
+        public int UpperBound(int[] arr, int tar)
+        {
+            int N = arr.Length - 1;
+            int s = 0;
+            int e = N;
+            int mid;
+            while (s < e)
+            {
+                mid = s + (e - s) / 2;
+                if (tar >= arr[mid])
+                {
+                    s = mid + 1;
+                }
+                else
+                {
+                    e = mid;
+                }
+            }
+
+            if (s < N && arr[s] < tar)
+            {
+                s++;
+            }
+
+            return s;
+        }
+
+        #endregion
+
     }
 }
