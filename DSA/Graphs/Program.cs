@@ -16,6 +16,8 @@ using Graphs.LinkedList;
 using Graphs.RevisionProblems;
 using System.Data;
 using NetTopologySuite.Noding;
+using Graphs.DPQuestions;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Graphs
 {
@@ -428,8 +430,8 @@ namespace Graphs
 
             #region Build Tree using Level Order
 
-            Node root = null;
-            root = bt.BuildTreeUsingLevelOrder(root);
+            //Node root = null;
+            //root = bt.BuildTreeUsingLevelOrder(root);
 
             #endregion
 
@@ -715,6 +717,18 @@ namespace Graphs
 
             #endregion
 
+            #region Lower Bound & Upper Bound
+
+            //int tar = 6;
+            //int[] arr = { 4, 6, 10, 12, 18, 20 };
+            //int lower = bs.LowerBound(arr, tar);
+            //int upper = bs.UpperBound(arr, tar);
+
+            //Console.Write($"Target {tar}-> ");
+            //Console.WriteLine($"Lower Bound: {lower} and Upper Bound: {upper}");
+
+            #endregion
+
             #endregion
 
             #region Selection Sort
@@ -853,6 +867,13 @@ namespace Graphs
 
             //Console.WriteLine($"No. of Prime numbers between 1 - {n} -> {ans}");
             //Console.WriteLine("\n");
+
+            #endregion
+
+            #region Missing Number
+            //int[] nums = { 1, 2, 4, 5 };
+            //int ans = bos.MissingNumber(nums);
+            //Console.WriteLine($"Missing number in array {ans}");
 
             #endregion
 
@@ -1231,6 +1252,65 @@ namespace Graphs
 
             #endregion
 
+            #region Recursion 
+
+            /////int n = 5;
+            //int ans = Factorial(n);
+            //Console.Write("Factorial of {0}: {1}", n.ToString(), ans.ToString());
+
+            //PrintCount(n);
+
+            //ReachHome(1, 10);
+
+            //int ans = Fibonacci(4);
+            //Console.WriteLine("Fibonacci: {0}", ans.ToString());
+
+            //int ans = CountDistinctWays(n);
+            //Console.WriteLine("Count Distinct Ways: {0}", ans.ToString());
+
+            //string[] arr = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
+            //SayDigits(412, arr);
+
+            //int[] arr = { 3, 2, 5, 1, 6 };
+            //int size = arr.Length;
+            //int ans = SumArray(arr, size);
+            //Console.WriteLine("Sum Of Array: {0}", ans.ToString());
+
+            //int[] arr = { 3, 2, 5, 1, 6 };
+            //int size = arr.Length;
+            //var result = LinearSearch(arr, size, 0);
+            //Console.WriteLine("Linear Search Result: {0}", result.ToString());
+
+            //int[] arr = { 2, 4, 6, 10, 14, 18, 22, 38, 49, 55, 222 };
+            //int size = arr.Length;
+            //Array.Sort(arr);
+            //int key = 22;
+            //var result = BinarySearch(arr, 0, size, key);
+            //Console.WriteLine("Binary Search Result: {0}", result.ToString());
+
+            //string s = "imtiaz";
+            //char[] sChar = s.ToCharArray();
+            //ReverString(ref sChar, 0, s.Length - 1);
+            //PrintCharArray(sChar, 0, sChar.Length);
+
+            //int baseNumber = 3;
+            //int power = 11;
+            //int ans = PowerOfNumber(baseNumber, power);
+            //Console.WriteLine("Power of {0} ^ {1}: {2}", baseNumber.ToString(), power.ToString(), ans.ToString());
+
+            //int[] arr = { 1, 2, 3 };
+            //var sub = Subsets(arr);
+            //foreach (var item in sub)
+            //{
+            //    foreach (var val in item)
+            //    {
+            //        Console.Write(val + " ");
+            //        Console.WriteLine("\n");
+            //    }
+            //}
+
+            #endregion
+
             #region Revision
 
             Revision rr = new Revision();
@@ -1439,10 +1519,115 @@ namespace Graphs
 
             #region Largest BST
 
-            Console.WriteLine("\n");
+            //Console.WriteLine("\n");
 
-            int ans = rr.largestBst(root);
-            Console.WriteLine($"Largest BST is of size {ans}");
+            //int ans = rr.largestBst(root);
+            //Console.WriteLine($"Largest BST is of size {ans}");
+
+            #endregion
+
+            #endregion
+
+            #region Dynamic Programming
+
+            DynamicProgramming dp = new DynamicProgramming();
+
+            #region Min Cost of Climbing Stairs
+
+            //int[] cost = { 10, 15, 20 };
+            //int ans = dp.MinCostClimbingStairs(cost);
+            //Console.WriteLine($"Minimum Cost of Climbing Stairs: {ans}");
+
+            #endregion
+
+            #region Min Number of coins
+
+            //int[] cost = { 1, 2, 5 };
+            //int amount = 11;
+            //int ans = dp.CoinChange(cost, amount);
+            //Console.WriteLine($"Minimum Number of Coins: {ans}");
+
+            #endregion
+
+            #region Non-Adjacent Elements
+
+            //int[] cost = { 1, 3, 1 };
+            //int ans = dp.Rob(cost);
+            //Console.WriteLine($"Non-Adjacent: {ans}");
+
+            #endregion
+
+            #region Derangement
+
+            //int n = 5;
+            //long ans = dp.CountDerangements(n);
+            //Console.WriteLine($"Derangement of array: {ans}");
+
+            #endregion
+
+            #region Knapsack
+
+            //int N = 58;
+            //int W = 41;
+            //int[] values = { 57, 95, 13, 29, 1, 99, 34, 77, 61, 23, 24, 70, 73, 88, 33, 61, 43, 5, 41, 63, 8, 67, 20, 72, 98, 59, 46, 58, 64, 94, 97, 70, 46, 81, 42, 7, 1, 52, 20, 54, 81, 3, 73, 78, 81, 11, 41, 45, 18, 94, 24, 82, 9, 19, 59, 48, 2, 72 };
+            //int[] weight = { 83, 84, 85, 76, 13, 87, 2, 23, 33, 82, 79, 100, 88, 85, 91, 78, 83, 44, 4, 50, 11, 68, 90, 88, 73, 83, 46, 16, 7, 35, 76, 31, 40, 49, 65, 2, 18, 47, 55, 38, 75, 58, 86, 77, 96, 94, 82, 92, 10, 86, 54, 49, 65, 44, 77, 22, 81, 52 };
+
+            //var ans = dp.knapSack(W, weight, values, N);
+            //Console.WriteLine($"KnapSack {ans}");
+
+
+
+            #endregion
+
+            #region Catalan Number
+
+            //int n = 5;
+            //int ans = dp.NumberOfWaysCatalan(n);
+            //Console.WriteLine($"Number of ways-> {ans}");
+
+            #endregion
+
+            #region LIS
+
+            //int[] nums = { 5, 8, 3, 7, 9, 1 };
+            //dp.LengthOfLIS(nums);
+
+            #endregion
+
+            #region Russian Doll
+
+            dp.MaxEnvelopes();
+
+            #endregion
+
+            #region Dice Roll
+
+            //int n = 2;
+            //int k = 6;
+            //int target = 7;
+
+            //int ans = dp.NumRollsToTarget(n, k, target);
+            //Console.WriteLine($"Number of Ways to make {target}-> {ans}");
+
+            #endregion
+
+            #region Longest Arithmetic Progression
+
+            //int[] nums = { 3, 6, 9, 12 };
+            //int ans = dp.LongestArithSeqLength(nums);
+
+            //Console.WriteLine($"Longest Arithmetic Progression-> {ans}");
+
+
+            #endregion
+
+            #region Longest Arithmetic Subsequence of Given Difference
+
+            int[] nums = { 1, 5, 7, 8, 5, 3, 4, 2, 1 };
+            int diff = -2;
+            int ans = dp.LongestSubsequence(nums, diff);
+
+            Console.WriteLine($"Longest Subsequence with Given Diff-> {ans}");
 
             #endregion
 
