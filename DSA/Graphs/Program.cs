@@ -18,6 +18,7 @@ using System.Data;
 using NetTopologySuite.Noding;
 using Graphs.DPQuestions;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using Graphs.StackAndQueue;
 
 namespace Graphs
 {
@@ -785,7 +786,7 @@ namespace Graphs
 
             #region Insertion Sort
 
-            InsertionSortAlgorithm ins = new InsertionSortAlgorithm();
+            //InsertionSortAlgorithm ins = new InsertionSortAlgorithm();
 
             //int N = 5;
             //int[] arr = { 10, 1, 7, 4, 8, 2, 11 };
@@ -1528,6 +1529,175 @@ namespace Graphs
 
             #endregion
 
+            #region Stack 
+
+            //Constructor for Custom Stack implementation
+            StackImplementation st = new StackImplementation(5);
+
+            StackImplementation si = new StackImplementation();
+
+            #region Custom Stack Implementation
+
+            //st.Push(10);
+            //st.Push(20);
+            //st.Push(30);
+            //st.Push(40);
+            //st.Push(50);
+
+
+            //bool ans = st.isEmpty();
+
+            #endregion
+
+            #region Reverse String
+
+            //string str = "imtiaz";
+            //si.ReverseString(str);
+
+            #endregion
+
+            #region Delete Mid in Stack
+
+            ////int[] stack = { 10, 20, 30, 40, 50 };
+            //int[] stack = { 10, 20, 40, 50 };
+            //si.DeleteMidInStack(ref stack);
+            //foreach (var item in stack)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Valid Parenthesis
+
+            //string s = "()[]{}";
+            //si.IsValid(s);
+
+            #endregion
+
+            #region Insert at Bottom of Stack
+
+            //Stack<int> sNode = new Stack<int>();
+            //int[] stArr = { 7, 1, 4, 5 };
+
+            //for (int i = 0; i < stArr.Length; i++)
+            //    sNode.Push(stArr[i]);
+
+            //si.InsertAtBottom(ref sNode, 15);
+            //Console.WriteLine("Insert at Bottom of Stack: ");
+            //while (sNode.Any())
+            //{
+            //    int top = sNode.Pop();
+            //    Console.Write(top + " ");
+            //}
+
+
+            #endregion
+
+            #region Reverse a Stack using Recursion
+
+            //Stack<int> sNode = new Stack<int>();
+            //int[] stArr = { 3, 4, 7, 9};
+
+            //for (int i = 0; i < stArr.Length; i++)
+            //    sNode.Push(stArr[i]);
+
+            //si.ReverseStackUsingRecursion(sNode);
+
+            #endregion
+
+            #region Sort A Stack
+
+            //Stack<int> sNode = new Stack<int>();
+            //int[] stArr = { 5, -2, 9, -7, 3};
+
+            //for (int i = 0; i < stArr.Length; i++)
+            //    sNode.Push(stArr[i]);
+
+            //si.SortAStack(sNode);
+
+            #endregion
+
+            #region Check Redundant Bracket
+
+            //string s = "((a+b))";
+            ////string s = "(a+b+(c+d))";
+            //bool ans = si.checkRedundancy(s);
+
+            //Console.WriteLine($"Is Redundant Bracket Present: {ans}");
+
+            #endregion
+
+            #region Next Larger Element
+
+            //int n = 4;
+            //long[] arr = { 1, 3, 2, 4 };
+            //var ans = si.nextLargerElement(arr, n);
+
+            //Console.WriteLine("Next Largest Element");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Final Prices Element
+
+            //int[] prices = {8, 4, 6, 2, 3};
+            //var ans = si.FinalPrices(prices);
+
+            //Console.WriteLine("Next Smallest Element");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Next Smaller Element
+
+            //int[] arr = { 4, 2, 1, 5, 3 };
+            //int n = arr.Length;
+            //var ans = si.immediateSmaller(arr, n);
+
+            //Console.Write("Input Elements-> ");
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            //Console.WriteLine();
+
+            //Console.WriteLine("Next Smallest Element");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Celebrity Problem
+
+            //int[,] matrix = { { 0, 0, 1, 0 },
+            //               { 0, 0, 1, 0 },
+            //               { 0, 0, 0, 0 },
+            //               { 0, 0, 1, 0 } };
+
+            int[,] matrix = { { 0,1,0 },
+                           { 0,0,0 },
+                           { 0,1,0 }};
+
+            //int[,] matrix = { { 0,1 },
+            //               { 0,1,} };
+
+            int ans = si.celebrity(matrix);
+            Console.WriteLine($"Celebrity-> {ans}");
+
+            #endregion
+
+            #endregion
+
             #region Dynamic Programming
 
             DynamicProgramming dp = new DynamicProgramming();
@@ -1623,11 +1793,11 @@ namespace Graphs
 
             #region Longest Arithmetic Subsequence of Given Difference
 
-            int[] nums = { 1, 5, 7, 8, 5, 3, 4, 2, 1 };
-            int diff = -2;
-            int ans = dp.LongestSubsequence(nums, diff);
+            //int[] nums = { 1, 5, 7, 8, 5, 3, 4, 2, 1 };
+            //int diff = -2;
+            //int ans = dp.LongestSubsequence(nums, diff);
 
-            Console.WriteLine($"Longest Subsequence with Given Diff-> {ans}");
+            //Console.WriteLine($"Longest Subsequence with Given Diff-> {ans}");
 
             #endregion
 
