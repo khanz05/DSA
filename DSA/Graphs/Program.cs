@@ -19,6 +19,7 @@ using NetTopologySuite.Noding;
 using Graphs.DPQuestions;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using Graphs.StackAndQueue;
+using System.Collections;
 
 namespace Graphs
 {
@@ -471,15 +472,19 @@ namespace Graphs
             #endregion
 
             #region Height Of Tree
+
             //Console.WriteLine("\n");
             //int height = bt.HeightOfTree(root);
-            //Console.Write("Height of Tree -> {0}", height); 
+            //Console.Write("Height of Tree -> {0}", height);
+
             #endregion
 
             #region Diameter Of Tree
-            //Console.WriteLine("\n"); 
-            //int diameter = bt.DiameterOfTree(root);
-            //Console.Write("Diameter of Tree -> {0}", diameter); 
+
+            //Console.WriteLine("\n");
+            //int diameter = bt.DiameterOfBinaryTree(root);
+            //Console.Write("Diameter of Tree -> {0}", diameter);
+
             #endregion
 
             #region Is Sum Tree
@@ -1684,15 +1689,90 @@ namespace Graphs
             //               { 0, 0, 0, 0 },
             //               { 0, 0, 1, 0 } };
 
-            int[,] matrix = { { 0,1,0 },
-                           { 0,0,0 },
-                           { 0,1,0 }};
+            //int[,] matrix = { { 0,1,0 },
+            //               { 0,0,0 },
+            //               { 0,1,0 }};
 
             //int[,] matrix = { { 0,1 },
             //               { 0,1,} };
 
-            int ans = si.celebrity(matrix);
-            Console.WriteLine($"Celebrity-> {ans}");
+            //int ans = si.celebrity(matrix);
+            //Console.WriteLine($"Celebrity-> {ans}");
+
+            #endregion
+
+            #endregion
+
+            #region Queue
+
+            QueueImplementation qi = new QueueImplementation();
+
+            #region First negative in every window of size k
+
+            //long n = 5;
+            //long[] a = { -8, 2, -3, -10, -6 };
+            //long k = 2;
+
+            //var ans = qi.FirstNegativeInteger(a, n, k);
+
+            //var ans = qi.FirstNegativeIntegerSlidingWindow(a, n, k);
+
+            //Console.Write("First Negative in K window: ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Reverse First K elements of Queue
+
+            //int[] arr = { 1, 2, 3, 4, 5 };
+            //int k = 3;
+            //Queue<int> q = new Queue<int>();
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    q.Enqueue(arr[i]);
+            //}
+
+            //qi.modifyQueue(q, k);
+
+            #endregion
+
+            #region First non-repeating character in a stream
+
+            //string A = "aabc";
+            //var ans = qi.FirstNonRepeating(A);
+            //Console.WriteLine(ans);
+
+            #endregion
+
+            #region Interleave the First Half of the Queue with Second Half
+
+            //int[] arr = { 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+            //Queue<int> q = new Queue<int>();
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    q.Enqueue(arr[i]);
+            //}
+
+            //var ans = qi.RearrangeInterLeaveQueue(q);
+            //while (ans.Any())
+            //{
+            //    int item = ans.Dequeue();
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Sum of minimum and maximum elements of all subarrays of size k
+
+            //int[] arr = { 2, 5, -1, 7, -3, -1, -2 };
+            //int n = arr.Length;
+            //int k = 4;
+            //var ans = qi.SumOfKsubArray(arr, n, k);
+
+            //Console.WriteLine($"Sum of Min and Max of Subarrays of size K-> {ans}");
 
             #endregion
 
