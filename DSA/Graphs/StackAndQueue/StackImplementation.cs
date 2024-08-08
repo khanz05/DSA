@@ -230,8 +230,6 @@ namespace Graphs.StackAndQueue
             InsertAtBottom(ref st, num);
         }
 
-
-
         #endregion
 
         #region Sort a Stack
@@ -471,6 +469,5 @@ namespace Graphs.StackAndQueue
         }
 
         #endregion
-
     }
 }
