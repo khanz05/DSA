@@ -20,6 +20,7 @@ using Graphs.DPQuestions;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using Graphs.StackAndQueue;
 using System.Collections;
+using System.ComponentModel;
 
 namespace Graphs
 {
@@ -1710,10 +1711,10 @@ namespace Graphs
             #region First negative in every window of size k
 
             //long n = 5;
-            //long[] a = { -8, 2, -3, -10, -6 };
+            //long[] a = { -8, 2, 3, -6, 10 };
             //long k = 2;
 
-            //var ans = qi.FirstNegativeInteger(a, n, k);
+            ////var ans = qi.FirstNegativeInteger(a, n, k);
 
             //var ans = qi.FirstNegativeIntegerSlidingWindow(a, n, k);
 
@@ -1773,6 +1774,21 @@ namespace Graphs
             //var ans = qi.SumOfKsubArray(arr, n, k);
 
             //Console.WriteLine($"Sum of Min and Max of Subarrays of size K-> {ans}");
+
+            #endregion
+
+            #region K Sized Subarray Maximum
+
+            int k = 3;
+            int[] arr = { 1, 2, 3, 1, 4, 5, 2, 3, 6 };
+            int n = arr.Length;
+
+            var ans = qi.MaxofSubarrays(arr, n, k);
+            Console.Write($"K Sized Subarray Maximum:");
+            foreach (var item in ans)
+            {
+                Console.Write(item + " ");
+            }
 
             #endregion
 
