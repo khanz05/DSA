@@ -121,7 +121,42 @@ namespace Graphs.StackAndQueue
         public List<long> FirstNegativeIntegerSlidingWindow(long[] A, long N, long K)
         {
             List<long> ans = new List<long>();
+            List<long> dq = new List<long>();
 
+            //Process first window of K- size
+            for (int i = 0; i < K; i++)
+            {
+                if (A[i] < 0)
+                    dq.Add(i);
+            }
+
+            //store answer of first k size window
+            if (dq.Count > 0)
+                ans.Add(A[dq[0]]);
+            else
+                ans.Add(0);
+
+            //Process for remaining windows
+            for (long i = K; i < N; i++)
+            {
+                //Removal
+                if (dq.Count > 0 && i - dq[0] >= K)
+                {
+                    dq.RemoveAt(0);
+                }
+
+                //addition
+                if (A[i] < 0)
+                {
+                    dq.Add(i);
+                }
+
+                //ans store
+                if (dq.Count > 0)
+                    ans.Add(A[dq[0]]);
+                else
+                    ans.Add(0);
+            }
             return ans;
         }
 
@@ -241,7 +276,7 @@ namespace Graphs.StackAndQueue
         {
             List<int> maxi = new List<int>();
             List<int> mini = new List<int>();
-           
+
             for (int i = 0; i < k; i++)
             {
                 while (maxi.Count != 0 && arr[maxi[maxi.Count - 1]] <= arr[i])
@@ -260,11 +295,13 @@ namespace Graphs.StackAndQueue
             }
 
             int sum = 0;
+            sum += arr[maxi[0]] + arr[mini[0]];
+
+
             for (int i = k; i < n; i++)
             {
-                sum += arr[maxi[0]] + arr[mini[0]];
-
                 //next window
+                //Removal
                 while (maxi.Count != 0 && i - maxi[0] >= k)
                 {
                     maxi.RemoveAt(0);
@@ -289,12 +326,57 @@ namespace Graphs.StackAndQueue
 
                 maxi.Add(i);
                 mini.Add(i);
+
+                sum += arr[maxi[0]] + arr[mini[0]];
             }
 
-            //make sure to consider
-            sum += arr[maxi[0]] + arr[mini[0]];
+            ////make sure to consider
+            //sum += arr[maxi[0]] + arr[mini[0]];
 
             return sum;
+        }
+
+        #endregion
+
+        #region K Sized Subarray Maximum
+
+        public List<int> MaxofSubarrays(int[] arr, int n, int k)
+        {
+            List<int> ans = new List<int>();
+            List<int> dq = new List<int>();
+
+            //Process for 1st K elements
+            for (int i = 0; i < k; i++)
+            {
+                while (dq.Count > 0 && arr[dq[dq.Count - 1]] <= arr[i])
+                    dq.RemoveAt(dq.Count - 1);
+
+                dq.Add(i);
+            }
+
+            //Process elements in for 1st Window
+            if (dq.Count > 0)
+                ans.Add(arr[dq[0]]);
+
+            //Process remaining elements
+            for (int i = k; i < n; i++)
+            {
+                //Next Window
+                //removal if not in current window
+                while (dq.Count > 0 && i - dq[0] >= k)
+                    dq.RemoveAt(0);
+
+                //Addition of elements from current window
+                while (dq.Count > 0 && arr[dq[dq.Count - 1]] <= arr[i])
+                    dq.RemoveAt(dq.Count - 1);
+
+
+                dq.Add(i);
+                if (dq.Count > 0)
+                    ans.Add(arr[dq[0]]);
+            }
+
+            return ans;
         }
 
         #endregion
