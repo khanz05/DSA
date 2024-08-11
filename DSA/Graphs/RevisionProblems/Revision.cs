@@ -915,6 +915,43 @@ namespace Graphs.RevisionProblems
 
         #endregion
 
+        #region Path Sum
+
+        public int PathSum(Node root, int targetSum)
+        {
+            int count = 0;
+            if (root == null) return count;
+            List<int> result = new List<int>();
+            solvePathSum(root, targetSum, ref count, ref result);
+            return count;
+        }
+
+        private void solvePathSum(Node root, int targetSum, ref int count, ref List<int> result)
+        {
+            if (root == null)
+                return;
+
+            result.Add(root.data);
+
+            solvePathSum(root.Left, targetSum, ref count, ref result);
+            solvePathSum(root.Right, targetSum, ref count, ref result);
+
+            int size = result.Count();
+            long sum = 0;
+            for (int i = size - 1; i >= 0; i--)
+            {
+                sum = sum + result[i];
+                if (sum == (long)targetSum)
+                {
+                    count++;
+                }
+            }
+
+            result.RemoveAt(size - 1);
+        }
+
+        #endregion
+
         #region Helper Methods
 
         private void CreateMapping(int[] inorder, Dictionary<int, int> nodeToIndex)
