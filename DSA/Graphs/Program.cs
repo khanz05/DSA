@@ -21,6 +21,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using Graphs.StackAndQueue;
 using System.Collections;
 using System.ComponentModel;
+using Graphs.Heaps;
 
 namespace Graphs
 {
@@ -1533,6 +1534,13 @@ namespace Graphs
 
             #endregion
 
+            #region Path Sum
+
+            //int target = 8;
+            //rr.PathSum(root, target);
+
+            #endregion
+
             #endregion
 
             #region Stack 
@@ -1779,18 +1787,243 @@ namespace Graphs
 
             #region K Sized Subarray Maximum
 
-            int k = 3;
-            int[] arr = { 1, 2, 3, 1, 4, 5, 2, 3, 6 };
-            int n = arr.Length;
+            //int k = 3;
+            //int[] arr = { 1, 2, 3, 1, 4, 5, 2, 3, 6 };
+            //int n = arr.Length;
 
-            var ans = qi.MaxofSubarrays(arr, n, k);
-            Console.Write($"K Sized Subarray Maximum:");
+            //var ans = qi.MaxofSubarrays(arr, n, k);
+            //Console.Write($"K Sized Subarray Maximum:");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #endregion
+
+            #region Heaps Revision
+
+            HeapRevision hr = new HeapRevision();
+
+            #region Insert and Delete
+
+            //hr.Insert(50);
+            //hr.Insert(55);
+            //hr.Insert(53);
+            //hr.Insert(52);
+            //hr.Insert(54);
+
+            //hr.Print();
+            //hr.Delete();
+
+            //hr.Print(); 
+
+            #endregion
+
+            #region Build Max heap
+
+            //int[] arr = { -1, 54, 53, 55, 52, 50 };
+            //int n = arr.Length;
+            //for (int i = n / 2 - 1; i > 0; i--)
+            //{
+            //    hr.HeapifyMax(arr, n, i);
+            //}
+
+            //Console.WriteLine("Print Heapify");
+
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
+            //Console.WriteLine(); 
+
+            #endregion
+
+            #region Build Min heap- Zero
+
+            //int[] arr = { 54, 53, 55, 52, 50 };
+            //int n = arr.Length;
+
+            //for (int i = n / 2; i >= 0; i--)
+            //{
+            //    hr.HeapifyMinZero(arr, n, i);
+            //}
+
+            //Console.WriteLine("Print Heapify");
+
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
+            //Console.WriteLine();
+
+            #endregion
+
+            #region Heap Sort
+
+            //int[] arr = { -1, 54, 53, 55, 52, 50 };
+            //int n = arr.Length - 1;
+            //for (int i = n / 2; i > 0; i--)
+            //{
+            //    hr.HeapifyMax(arr, n, i);
+            //}
+
+            //Console.WriteLine("Print Heapify");
+
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine();
+
+            //Console.WriteLine("Heap Sort");
+            //hr.HeapSort(arr, n);
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
+
+            #endregion
+
+            #region kth Smallest Element
+
+            //int[] arr = { 7, 3, 8, 2, 6, 5,1, 4 };
+            //int[] arr = { 1, 3, 2, 4 };
+            //int k = 4;
+            //int l = 0;
+            //int r = arr.Length - 1;
+
+            //int ans = hr.kthSmallest(arr, l, r, k);
+            //Console.Write($"kth Smallest Element-> {ans}");
+
+            #endregion
+
+            #region Kth Largest Element
+
+            //int[] arr = { 3, 2, 1, 5, 6, 4 };
+            //int k = 2;
+
+            //int ans = hr.FindKthLargest(arr, k);
+            //Console.Write($"kth Largest Element-> {ans}");
+
+            #endregion
+
+            #region Check if a given Binary Tree is a Heap
+
+            //bool ans = hr.isHeap(root);
+            //Console.WriteLine($"Is Binary Tree Heap-> {ans}");
+
+            #endregion
+
+            #region Merge two binary max heap
+
+            //int[] a = { 10, 5, 6, 2 };
+            //int[] b = { 12, 7, 9 };
+
+            //var ans = hr.MergeHeaps(a, b);
+
+            //Console.WriteLine("Merge two binary max heap");
+            //for (int i = 0; i < ans.Length; i++)
+            //{
+            //    Console.Write(ans[i] + " ");
+            //}
+            //Console.WriteLine();
+
+            #endregion
+
+            #region Minimum Cost of ropes
+
+            //int[] arr = { 4, 3, 2, 6 };
+            //int[] arr = { 4, 2, 7, 6, 9 };
+            //int ans = hr.MinimumCostOfRopes(arr);
+            //Console.WriteLine($"Minimum Cost of ropes-> {ans}");
+
+            #endregion
+
+            #region Convert BST to Min Heap
+
+            //Node ans = hr.ConvertBSTToMinHeapUtil(root);
+            //Console.WriteLine();
+            //bt.LevelOrderTraversal(ans);
+
+            #endregion
+
+            #region Convert BST to Max Heap
+
+            //Node ans = hr.ConvertBSTToMaxHeapUtil(root);
+            //Console.WriteLine();
+            //bt.LevelOrderTraversal(ans);
+
+            #endregion
+
+            #region K-th Largest Sum Contiguous Subarray
+
+            //int[] a = { 20, -5, -1 };
+            //int k = 3;
+
+            //int[] a = { 2, 6, 4, 1 };
+            //int k = 3;
+
+            //int[] a = { 10, -10, 20, -40 };
+            //int k = 6;
+
+            //int ans = hr.kthLargestSumSubarrray(a, k);
+            //Console.WriteLine($"K-th Largest Sum Contiguous Subarray-> {ans}");
+
+            #endregion
+
+            #region Maximum Contigous Subarray
+
+            //int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+            //var ans = hr.MaxSubArray(nums);
+            //Console.WriteLine($"Maximum Contigous Subarray-> {ans}");
+
+            #endregion
+
+            #region Merge K-Sorted Arrays
+
+            //int k = 3;
+            //int[,] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+            //4
+            //1 2 3 4 0 5 10 15 2 4 8 10 3 9 27 81
+
+
+            //int k = 4;
+            //int[,] arr = { { 1, 2, 3, 4 }, { 0, 5, 10, 15 }, { 2, 4, 8, 10 }, { 3, 9, 27, 81 } };
+
+            //int k = 3;
+            //int[,] arr = { { 5, 9, 44 }, { 51, 65, 88 }, { 2, 79, 89 } };
+
+            //int k = 2;
+            //int[,] arr = { { 51, 81 }, { 63, 71 } };
+
+
+            //var ans = hr.MergeKSortedArrays(arr, k);
+            //Console.WriteLine($"MergeKSortedArrays->");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Smallest Range
+
+            int[][] nums =  new int[][] { new int[]{ 4, 10, 15, 24, 26 }, new int[] { 0, 9, 12, 20 }, new int[] { 5, 18, 22, 30 } };
+            int[] ans = hr.SmallestRange(nums);
+
+            Console.WriteLine($"Smallest Range->");
             foreach (var item in ans)
             {
                 Console.Write(item + " ");
             }
 
+
             #endregion
+
 
             #endregion
 
