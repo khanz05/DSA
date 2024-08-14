@@ -39,7 +39,7 @@ namespace Graphs.BinaryTreeTopic
         public Node BuildTreeUsingLevelOrder(Node root)
         {
             Queue<Node> qNode = new Queue<Node>();
-            Console.WriteLine("Enter Data");
+            Console.WriteLine("Enter Root");
             int data = Convert.ToInt16(Console.ReadLine());
             root = new Node(data);
             qNode.Enqueue(root);
@@ -351,7 +351,35 @@ namespace Graphs.BinaryTreeTopic
             return result;
         }
 
+        public int DiameterOfBinaryTree(Node root)
+        {
+            PairInt result = solveDiameter(root);
+            return result.first;
+        }
 
+        private PairInt solveDiameter(Node root)
+        {
+            //Base case
+            if (root == null)
+            {
+                PairInt p = new PairInt(0, 0);
+                return p;
+            }
+
+            Node temp = root;
+            PairInt leftAns = solveDiameter(temp.Left);
+            PairInt rightAns = solveDiameter(temp.Right);
+
+            int op1 = leftAns.first;
+            int op2 = rightAns.first;
+            int op3 = leftAns.second + rightAns.second;
+
+            int maxdiameter = Math.Max(op1, Math.Max(op2, op3));
+            int maxheight = Math.Max(leftAns.second, rightAns.second) + 1;
+
+            PairInt ans = new PairInt(maxdiameter, maxheight);
+            return ans;
+        }
 
         private Dictionary<int, int> diameterFast(Node root)
         {
@@ -612,8 +640,6 @@ namespace Graphs.BinaryTreeTopic
                 return;
             }
 
-            ans.Add(root.data);
-
             if (root.Right != null)
             {
                 traversalRight(root.Right, ref ans);
@@ -622,6 +648,8 @@ namespace Graphs.BinaryTreeTopic
             {
                 traversalRight(root.Left, ref ans);
             }
+
+            ans.Add(root.data);
         }
 
 
@@ -1218,6 +1246,18 @@ namespace Graphs.BinaryTreeTopic
         public int second;
 
         public PairBool(bool first, int second)
+        {
+            this.first = first;
+            this.second = second;
+        }
+    }
+
+    public class PairInt
+    {
+        public int first;
+        public int second;
+
+        public PairInt(int first, int second)
         {
             this.first = first;
             this.second = second;
