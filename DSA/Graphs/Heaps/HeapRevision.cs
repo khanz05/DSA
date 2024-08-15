@@ -592,7 +592,7 @@ namespace Graphs.Heaps
 
         #region K-th Largest Sum Contiguous Subarray
 
-        public int kthLargestSumSubarrray(int[]arr, int K)
+        public int kthLargestSumSubarrray(int[] arr, int K)
         {
             int n = arr.Length;
             List<int> pq = new List<int>();
@@ -692,7 +692,7 @@ namespace Graphs.Heaps
             }
 
             int size = minHeap.Count;
-            for (int i = K/2 -1; i >= 0; i--)
+            for (int i = K / 2 - 1; i >= 0; i--)
             {
                 HeapifyMergeKSortedArrays(ref minHeap, size, i);
             }
@@ -749,7 +749,7 @@ namespace Graphs.Heaps
 
         #region Smallest Range
 
-        public int[] SmallestRange(int[][]nums)
+        public int[] SmallestRange(int[][] nums)
         {
             int mini = int.MaxValue;
             int maxi = int.MinValue;
@@ -836,21 +836,57 @@ namespace Graphs.Heaps
 
         #endregion
 
-        #region Helper Class
+        #region Smallest Range- Using MinHeap Class
 
-        public class HeapNode
+        public int[] SmallestRangeUsingMinHeap(int[][] nums)
         {
-            public int data;
-            public int row;
-            public int col;
+            int mini = int.MaxValue;
+            int maxi = int.MinValue;
 
-            public HeapNode(int data, int row, int col)
+            int K = nums.Count();
+
+            var minHeap = new MinHeap<HeapNodeComparable>();
+
+            for (int i = 0; i < K; i++)
             {
-                this.data = data;
-                this.row = row;
-                this.col = col;
+                int element = nums[i][0];
+                mini = Math.Min(mini, element);
+                maxi = Math.Max(maxi, element);
+                HeapNodeComparable temp = new HeapNodeComparable(element, i, 0);
+                minHeap.Add(temp);
             }
+
+            int start = mini, end = maxi;
+            while (minHeap.Count > 0)
+            {
+                HeapNodeComparable temp = minHeap.ExtractMin();
+
+                mini = temp.data;
+                int row = temp.row;
+                int col = temp.col;
+
+                if (maxi - mini < end - start)
+                {
+                    start = mini;
+                    end = maxi;
+                }
+
+                if (col + 1 < nums[row].Count())
+                {
+                    int element = nums[row][col + 1];
+                    maxi = Math.Max(maxi, element);
+                    HeapNodeComparable next = new HeapNodeComparable(element, row, col + 1);
+                    minHeap.Add(next);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return new int[] { start, end };
         }
+
 
         #endregion
 
@@ -881,4 +917,110 @@ namespace Graphs.Heaps
 
         #endregion
     }
+
+    #region Helper Class
+
+    public class HeapNode
+    {
+        public int data;
+        public int row;
+        public int col;
+
+        public HeapNode(int data, int row, int col)
+        {
+            this.data = data;
+            this.row = row;
+            this.col = col;
+        }
+    }
+
+    public class HeapNodeComparable : IComparable<HeapNodeComparable>
+    {
+        public int data;
+        public int row;
+        public int col;
+
+        public HeapNodeComparable(int data, int row, int col)
+        {
+            this.data = data;
+            this.row = row;
+            this.col = col;
+        }
+
+        public int CompareTo(HeapNodeComparable other)
+        {
+            return data.CompareTo(other.data);
+        }
+    }
+
+    public class MinHeap<T> where T : IComparable<T>
+    {
+        private List<T> heap;
+
+        public MinHeap()
+        {
+            heap = new List<T>();
+        }
+
+        public int Count { get { return heap.Count; } }
+
+        public void Add(T item)
+        {
+            heap.Add(item);
+            int currentIndex = heap.Count - 1;
+            while (currentIndex > 0)
+            {
+                int parent = (currentIndex - 1) / 2; // Zero based indexing: (currentIndex - 1)
+                if (heap[currentIndex].CompareTo(heap[parent]) >= 0)
+                {
+                    break;
+                }
+
+                Swap(currentIndex, parent);
+                currentIndex = parent;
+            }
+        }
+
+        public T ExtractMin()
+        {
+            int lastIndex = heap.Count - 1;
+            T min = heap[0];
+            heap[0] = heap[lastIndex];
+            heap.RemoveAt(lastIndex);
+            Heapify(0);
+            return min;
+        }
+
+        private void Heapify(int i)
+        {
+            int smallest = i;
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+
+            if (left < heap.Count && heap[smallest].CompareTo(heap[left]) > 0)
+            {
+                smallest = left;
+            }
+
+            if (right < heap.Count && heap[smallest].CompareTo(heap[right]) > 0)
+            {
+                smallest = right;
+            }
+
+            if (smallest != i)
+            {
+                Swap(i, smallest);
+                Heapify(smallest);
+            }
+        }
+
+        private void Swap(int i, int j)
+        {
+            T temp = heap[i];
+            heap[i] = heap[j];
+            heap[j] = temp;
+        }
+    }
+
+    #endregion
 }
