@@ -795,8 +795,8 @@ namespace Graphs
 
             //InsertionSortAlgorithm ins = new InsertionSortAlgorithm();
 
-            //int N = 5;
-            //int[] arr = { 10, 1, 7, 4, 8, 2, 11 };
+            //int[] arr = { 5, 3, 1, 7, 9, 6 };
+            //int N = arr.Length;
             //ins.InsertionSort(ref arr);
 
             //Console.WriteLine("Insertion Sort: ");
@@ -2012,17 +2012,52 @@ namespace Graphs
 
             #region Smallest Range
 
-            int[][] nums =  new int[][] { new int[]{ 4, 10, 15, 24, 26 }, new int[] { 0, 9, 12, 20 }, new int[] { 5, 18, 22, 30 } };
-            int[] ans = hr.SmallestRange(nums);
+            //int[][] nums =  new int[][] { new int[]{ 4, 10, 15, 24, 26 }, new int[] { 0, 9, 12, 20 }, new int[] { 5, 18, 22, 30 } };
+            //int[] ans = hr.SmallestRange(nums);
 
-            Console.WriteLine($"Smallest Range->");
-            foreach (var item in ans)
-            {
-                Console.Write(item + " ");
-            }
-
+            //Console.WriteLine($"Smallest Range->");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
 
             #endregion
+
+            #region Smallest Range- Using MinHeap Custom Class
+
+            //int[][] nums = new int[][] { new int[] { 4, 10, 15, 24, 26 }, new int[] { 0, 9, 12, 20 }, new int[] { 5, 18, 22, 30 } };
+            //int[] ans = hr.SmallestRangeUsingMinHeap(nums);
+
+            //Console.WriteLine($"Smallest Range Custom Class->");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #endregion
+
+            #region test Revision
+
+            //List<int>[] adj = new List<int>[3];
+
+            //for (int i = 0; i < adj.Length; i++)
+            //{
+            //    adj[i] = new List<int>();
+            //}
+            
+
+            //adj[0].Add(0);
+            //adj[0].Add(1);
+
+            //adj[2].Add(0);
+            //adj[2].Add(1);
+
+            //for (int i = 0; i < adj.Length; i++)
+            //{
+            //    List<int> item = adj[i];
+            //}
 
 
             #endregion
