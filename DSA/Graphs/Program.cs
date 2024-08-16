@@ -22,6 +22,7 @@ using Graphs.StackAndQueue;
 using System.Collections;
 using System.ComponentModel;
 using Graphs.Heaps;
+using Graphs.RevisionProblems.Graphs;
 
 namespace Graphs
 {
@@ -2038,7 +2039,7 @@ namespace Graphs
 
             #endregion
 
-            #region test Revision
+            #region test Array of List
 
             //List<int>[] adj = new List<int>[3];
 
@@ -2046,7 +2047,7 @@ namespace Graphs
             //{
             //    adj[i] = new List<int>();
             //}
-            
+
 
             //adj[0].Add(0);
             //adj[0].Add(1);
@@ -2058,6 +2059,53 @@ namespace Graphs
             //{
             //    List<int> item = adj[i];
             //}
+
+
+            #endregion
+
+            #region Revision Graphs
+
+            #region Shortest path for Undirected, non-weighted Graph
+
+            //int vertex = 10;
+            //int[,] edges = { { 1, 2 }, { 1, 3 }, { 1, 4 }, { 2, 5 }, { 3, 8 }, { 4, 6 }, { 5, 8 }, { 6, 7 }, { 7, 8 }, { 8, 0 } };
+            //int source = 1;
+            //int destination = 8;
+            //ShortestPathInGraphRevision spg = new ShortestPathInGraphRevision();
+            //spg.ShortestPathForUndirectedGraph(edges, source, destination, vertex);
+
+            #endregion
+
+            #region Shortest Path for Directed, Weighted Graph
+
+            //int source = 1;
+            //ShortestPathInGraphRevision spg = new ShortestPathInGraphRevision();
+            //spg.ShortestDistanceForWeightedGraph(source);
+
+            #endregion
+
+            #region Shortest Path using Dijkstra's Algo
+
+            //int source = 0;
+            //ShortestPathInGraphRevision spg = new ShortestPathInGraphRevision();
+            //spg.ShortestPathUsingDijkstra(source);
+
+            #endregion
+
+            #region Minimum Spanning tree using Prim's Algo
+
+            //int source = 0;
+            //MinimumSpanningTreeRevision mst = new MinimumSpanningTreeRevision();
+            //mst.MinimumSpanningTreeUsingPrims(source);
+
+            #endregion
+
+            #region Minimum Spanning Tree using Kruskal's Algo
+
+            MinimumSpanningTreeRevision mst = new MinimumSpanningTreeRevision();
+            mst.MinimumSpannigTreeUsingKruskal();
+
+            #endregion
 
 
             #endregion
