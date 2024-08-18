@@ -179,7 +179,7 @@ namespace Graphs
 
             #region Bridges in Graph
 
-            //int[,] edges = { { 0, 1 }, { 0, 2 }, { 0, 3 }, { 1, 2 }, { 3, 0 }, { 3, 4 }, { 4, 3 } };
+            //int[,] edges = { { 0, 1 }, { 0, 2 }, { 0, 3 }, { 1, 2 }, { 3, 4 }, { 4, 3 } };
             //int vertex = 5;
             //Bridges bd = new Bridges();
             //bd.BridgeInGraph(edges, vertex);
@@ -2102,11 +2102,39 @@ namespace Graphs
 
             #region Minimum Spanning Tree using Kruskal's Algo
 
-            MinimumSpanningTreeRevision mst = new MinimumSpanningTreeRevision();
-            mst.MinimumSpannigTreeUsingKruskal();
+            //MinimumSpanningTreeRevision mst = new MinimumSpanningTreeRevision();
+            //mst.MinimumSpannigTreeUsingKruskal();
 
             #endregion
 
+            #region Bridges in Graph
+
+            //int[,] edges = { { 0, 1 }, { 0, 2 }, { 0, 3 }, { 1, 2 }, { 3, 4 }, { 4, 3 } };
+            //int vertex = 5;
+            //BridgesRevision bd = new BridgesRevision();
+            //bd.BridgeInGraph(edges, vertex);
+
+            #endregion
+
+            #region Articulation Point
+
+            //int[,] edges = { { 0, 1 }, { 0, 3 }, { 0, 4 }, { 1, 2 }, { 3, 4 } };
+            //int[,] edges = { { 0, 1 }, { 1, 4 }, { 2, 3 }, { 2, 4 }, { 3, 4 } };
+            //int vertex = 5;
+            //ArticulationPointRevision ap = new ArticulationPointRevision();
+            //ap.FindArticulationPoint(edges, vertex);
+
+            #endregion
+
+            #region Strongly Connected Components- Kosaraju's Algo
+
+            //int[,] edges = { { 0, 1 }, { 1, 2 }, { 1, 3 }, { 2, 0 }, { 3, 4 } };
+            int[,] edges = { { 0, 3 }, { 0, 2 }, { 1, 0 }, { 2, 1 }, { 3, 4 } };
+            int vertex = 5;
+            StronglyConnectedComponentsRevision scc = new StronglyConnectedComponentsRevision();
+            scc.SCCUsingKosaraju(edges, vertex);
+
+            #endregion
 
             #endregion
 
