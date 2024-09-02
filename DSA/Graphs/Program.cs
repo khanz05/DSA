@@ -23,6 +23,8 @@ using System.Collections;
 using System.ComponentModel;
 using Graphs.Heaps;
 using Graphs.RevisionProblems.Graphs;
+using Graphs.Greedy;
+using NetTopologySuite.Index.HPRtree;
 
 namespace Graphs
 {
@@ -2129,10 +2131,10 @@ namespace Graphs
             #region Strongly Connected Components- Kosaraju's Algo
 
             //int[,] edges = { { 0, 1 }, { 1, 2 }, { 1, 3 }, { 2, 0 }, { 3, 4 } };
-            int[,] edges = { { 0, 3 }, { 0, 2 }, { 1, 0 }, { 2, 1 }, { 3, 4 } };
-            int vertex = 5;
-            StronglyConnectedComponentsRevision scc = new StronglyConnectedComponentsRevision();
-            scc.SCCUsingKosaraju(edges, vertex);
+            //int[,] edges = { { 0, 3 }, { 0, 2 }, { 1, 0 }, { 2, 1 }, { 3, 4 } };
+            //int vertex = 5;
+            //StronglyConnectedComponentsRevision scc = new StronglyConnectedComponentsRevision();
+            //scc.SCCUsingKosaraju(edges, vertex);
 
             #endregion
 
@@ -2238,6 +2240,146 @@ namespace Graphs
             //int ans = dp.LongestSubsequence(nums, diff);
 
             //Console.WriteLine($"Longest Subsequence with Given Diff-> {ans}");
+
+            #endregion
+
+            #region Find all Subsequence
+
+            //string output = "";
+            //string input = "abcd";
+
+            //dp.printSubsequence(input, output);
+
+            #endregion
+
+            #endregion
+
+            #region Greedy Algorithm
+
+            GreedyAlgorithm ga = new GreedyAlgorithm();
+
+            #region N-Meeting
+
+            //int[] start = { 75250, 50074, 43659, 8931, 11273, 27545, 50879, 77924 };
+            //int[] end = { 112960, 114515, 81825, 93424, 54316, 35533, 73383, 160252 };
+            //int n = start.Length;
+
+            //int ans = ga.N_maxMeetings(n, start, end);
+
+            //Console.WriteLine($"N-Meeting: {ans}");
+
+            #endregion
+
+            #region Maximum Meetings in One Room
+
+            //int[] start = { 1, 3, 0, 5, 8, 5 };
+            //int[] end = { 2, 4, 6, 7, 9, 9 };
+            //int n = start.Length;
+
+            //var ans = ga.maxMeetings(n, start, end);
+
+            //Console.WriteLine("Maximum Meetings in One Room: ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Shop in Candy Store
+
+            //int N = 4;
+            //int K = 2;
+            //int[] candies = { 3, 2, 1, 4 };
+
+            //var ans = ga.candyStore(candies, N, K);
+
+            //Console.WriteLine("Shop in Candy Store: ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Check if it is possible to survive on Island
+
+            //int s = 10;
+            //int n = 9;
+            //int m = 8;
+
+            ////int s = 5;
+            ////int n = 2;
+            ////int m = 2;
+            //int ans = ga.minimumDays(s, n, m);
+            //Console.WriteLine($"Minimum Days to survive: {ans}");
+
+            #endregion
+
+            #region Chocolate Distribution Problem
+
+            //int N = 8, M = 5;
+            //List<long> A = new List<long> { 3, 4, 1, 9, 56, 7, 9, 12 };
+            //var ans = ga.findMinDiff(A, N, M);
+            //Console.WriteLine($"Chocolate Distribution Problem: {ans}");
+
+
+            #endregion
+
+            #region Huffamn Encoding
+
+            //string S = "abcdef";
+            //int[] f = { 5, 9, 12, 13, 16, 45 };
+            //int N = f.Length;
+            //var ans = ga.huffmanCodes(S, f, N);
+            //Console.WriteLine("Huffman Encoding: ");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            #endregion
+
+            #region Fractional Knapsack
+
+            //int n = 3;
+            //int w = 50;
+            //int[] value = { 60, 100, 120 };
+            //int[] weight = { 10, 20, 30 };
+            //Item[] item = new Item[n];
+            //ga.AddItem(ref item, value, weight);
+
+            //var ans = ga.fractionalKnapsack(w, item, n);
+            //Console.WriteLine($"Fractional Knapsack: {ans}");
+
+
+            #endregion
+
+            #region Job Sequencing
+
+            int[] jobID = { 1, 2, 3, 4 };
+            int[] deadline = { 4, 1, 1, 1 };
+            int[] profit = { 20, 1, 40, 30 };
+            int n = jobID.Length;
+            Job[] job = new Job[n];
+            ga.FillJob(ref job, jobID, deadline, profit);
+            var ans = ga.JobScheduling(job, n);
+
+            int count = 0;
+            Console.WriteLine("Job Sequencing: ");
+            foreach (var item in ans)
+            {
+                if (count == 0)
+                {
+                    Console.WriteLine($"Max Job: {item}");
+                    count++;
+                }
+                else
+                {
+                    Console.WriteLine($"Max Profit: {item}");
+                }
+            }
+
 
             #endregion
 
