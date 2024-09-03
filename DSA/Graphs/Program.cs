@@ -25,6 +25,7 @@ using Graphs.Heaps;
 using Graphs.RevisionProblems.Graphs;
 using Graphs.Greedy;
 using NetTopologySuite.Index.HPRtree;
+using Graphs.Backtracking;
 
 namespace Graphs
 {
@@ -2357,29 +2358,47 @@ namespace Graphs
 
             #region Job Sequencing
 
-            int[] jobID = { 1, 2, 3, 4 };
-            int[] deadline = { 4, 1, 1, 1 };
-            int[] profit = { 20, 1, 40, 30 };
-            int n = jobID.Length;
-            Job[] job = new Job[n];
-            ga.FillJob(ref job, jobID, deadline, profit);
-            var ans = ga.JobScheduling(job, n);
+            //int[] jobID = { 1, 2, 3, 4 };
+            //int[] deadline = { 4, 1, 1, 1 };
+            //int[] profit = { 20, 1, 40, 30 };
+            //int n = jobID.Length;
+            //Job[] job = new Job[n];
+            //ga.FillJob(ref job, jobID, deadline, profit);
+            //var ans = ga.JobScheduling(job, n);
 
-            int count = 0;
-            Console.WriteLine("Job Sequencing: ");
-            foreach (var item in ans)
-            {
-                if (count == 0)
-                {
-                    Console.WriteLine($"Max Job: {item}");
-                    count++;
-                }
-                else
-                {
-                    Console.WriteLine($"Max Profit: {item}");
-                }
-            }
+            //int count = 0;
+            //Console.WriteLine("Job Sequencing: ");
+            //foreach (var item in ans)
+            //{
+            //    if (count == 0)
+            //    {
+            //        Console.WriteLine($"Max Job: {item}");
+            //        count++;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"Max Profit: {item}");
+            //    }
+            //}
 
+
+            #endregion
+
+            #endregion
+
+            #region Backtracking
+
+            BacktrackingAlgo backtrack = new BacktrackingAlgo();
+
+            #region Rat In Maze Problem
+
+            //int[,] mat = { { 1, 0, 0, 0 }, { 1, 1, 0, 1 }, { 1, 1, 0, 0 }, { 0, 1, 1, 1 } };
+            //var ans = backtrack.FindRatPath(mat);
+            //Console.WriteLine("Rat In Maze Problem");
+            //foreach (var item in ans)
+            //{
+            //    Console.Write(item + " ");
+            //}
 
             #endregion
 
@@ -2387,7 +2406,5 @@ namespace Graphs
 
             Console.ReadLine();
         }
-
-
     }
 }
